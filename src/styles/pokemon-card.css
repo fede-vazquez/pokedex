@@ -1,0 +1,46 @@
+@import "./type-pokemon-colors.css";
+
+a {
+    all: unset;
+    cursor: pointer;
+}
+
+.pokemon-card {
+    width: 250px;
+    background-color: var(--type-bg-color);
+    border-radius: 20px;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.card-img {
+    padding: 0 10px;
+    border-left: 1px solid #f0f0f0;
+}
+
+.card-info {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.type-item {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 12px;
+    font-weight: bold;
+    text-transform: capitalize;
+    background-color: var(--type-bg-color);
+    box-shadow: 0 0 5px #00000033;
+}
+
+.card-types-container {
+    padding: 5px;
+}
