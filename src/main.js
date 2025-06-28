@@ -1,7 +1,10 @@
-import { getPokemonGeneralInfoByid } from "./apiRequests/getPokemonGeneralInfoById";
+import { getAllPokemonInfo } from "./apiRequests/getAllPokemonsInfo";
+import { getPokemonsIdByGeneration } from "./apiRequests/getPokemonsIdByGeneration";
 import "./style.css";
 
-const poke = await getPokemonGeneralInfoByid(1);
+const pokemonsIds = await getPokemonsIdByGeneration(1);
+
+console.log(await getAllPokemonInfo(pokemonsIds));
 
 document.querySelector("#app").innerHTML = `
   <div>
