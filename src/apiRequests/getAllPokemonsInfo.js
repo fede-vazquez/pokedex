@@ -1,8 +1,11 @@
-// Función que devuelve un array de pokemones.
-
 import { getPokemonGeneralInfoByid } from "./getPokemonGeneralInfoById";
 
-// pokemonIds: Number[]
+/**
+ * Función para solicitar la información de pokemones según un array de ids dado.
+ * @param {Array<number>} pokemonIds - Array de ids de pokemones.
+ * @returns {Promise<Array<{id: number, order: number, name: string, height: number, weight: number, sprite: string, typeNames: Array<string>}>>} - Array con promesas que devuelven la información de cada pokémon.
+ */
+
 export async function getAllPokemonInfo(pokemonIds) {
     const requests = [];
 

@@ -1,6 +1,10 @@
 import { endpoints } from "./endpoints";
 
-// Función que trae la información de un pokemon segun el id.
+/**
+ * Función que solicita la información general de un pokémon por su id.
+ * @param {number} searchId - Id del pokémon.
+ * @returns {Promise<{id: number, order: number, name: string, height: number, weight: number, sprite: string, typeNames: Array<string>}>}
+ */
 export async function getPokemonGeneralInfoByid(searchId) {
     const req = await fetch(endpoints.pokemonById(searchId));
     if (!req.ok) return {};
