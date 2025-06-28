@@ -6,6 +6,7 @@
 
 body {
     background-color: var(--backgrount-color);
+    color: var(--color);
 }
 
 .dark-mode {
