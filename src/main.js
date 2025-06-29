@@ -1,12 +1,9 @@
-import { getAllPokemonInfo } from "./apiRequests/getAllPokemonsInfo";
-import { getPokemonsIdByGeneration } from "./apiRequests/getPokemonsIdByGeneration";
+import { generatePokemonList } from "./components/generatePokemonList";
+import { pokemonsData } from "./data/pokemonsData";
 import "./style.css";
 
-const pokemonsIds = await getPokemonsIdByGeneration(1);
+const app = document.querySelector("#app");
 
-console.log(await getAllPokemonInfo(pokemonsIds));
+const list = generatePokemonList(pokemonsData);
 
-document.querySelector("#app").innerHTML = `
-  <div>
-  </div>
-`;
+app.appendChild(list);
