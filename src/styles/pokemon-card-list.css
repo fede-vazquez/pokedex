@@ -3,6 +3,22 @@
 a {
     all: unset;
     cursor: pointer;
+    display: block;
+    height: 100%;
+}
+
+.pokemon-list-container {
+    width: 90%;
+    margin: auto;
+}
+
+.pokemon-list {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 20px;
+    padding: 20px;
+    width: fit-content;
+    margin: auto;
 }
 
 .pokemon-card {
@@ -15,13 +31,14 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 10px;
     border-bottom: 1px solid #f0f0f0;
 }
 
 .card-img {
     padding: 0 10px;
     border-left: 1px solid #f0f0f0;
+    height: 100%;
 }
 
 .card-info {
@@ -42,5 +59,29 @@ a {
 }
 
 .card-types-container {
-    padding: 5px;
+    padding: 0 5px;
+}
+
+@media (min-width: 600px) {
+    .pokemon-list {
+        grid-template-columns: auto auto;
+    }
+}
+
+@media (min-width: 900px) {
+    .pokemon-list {
+        grid-template-columns: auto auto auto;
+    }
+}
+
+@media (min-width: 1200px) {
+    .pokemon-list {
+        grid-template-columns: auto auto auto auto;
+    }
+}
+
+@media (min-width: 1500px) {
+    .pokemon-list {
+        grid-template-columns: auto auto auto auto auto;
+    }
 }

@@ -1,5 +1,3 @@
-import "../styles/pokemon-card.css";
-
 /**
  * Función que genera una card de un pokémon dependiendo de la información dada.
  * @param {Object} pokemon - Objeto que contiene la información del pokémon.
