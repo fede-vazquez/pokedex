@@ -1,4 +1,4 @@
-import { getPokemonGeneralInfoByid } from "./getPokemonGeneralInfoById";
+import { getPokemonGeneralInfoByID } from "./getPokemonGeneralInfoByID";
 
 /**
  * Función para solicitar la información de pokemones según un array de ids dado.
@@ -10,7 +10,7 @@ export async function getAllPokemonInfo(pokemonIds) {
     const requests = [];
 
     pokemonIds.forEach(id => {
-        requests.push(getPokemonGeneralInfoByid(id));
+        requests.push(getPokemonGeneralInfoByID(id));
     });
 
     return Promise.all(requests);

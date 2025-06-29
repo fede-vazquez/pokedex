@@ -5,10 +5,9 @@ import { endpoints } from "./endpoints";
  * @param {number} searchId - Id del pokémon.
  * @returns {Promise<{id: number, pokedexNumber: number, name: string, height: number, weight: number, sprite: string, typeNames: Array<string>}>}
  */
-export async function getPokemonGeneralInfoByid(searchId) {
+export async function getPokemonGeneralInfoByID(searchId) {
     const req = await fetch(endpoints.pokemonById(searchId));
     if (!req.ok) return {};
-
     // Documentación para ver respuesta de la api: https://pokeapi.co/docs/v2#pokemon
     const res = await req.json();
 
