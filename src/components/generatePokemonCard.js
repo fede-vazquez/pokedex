@@ -1,19 +1,21 @@
 import "../styles/pokemon-card.css";
 
 /**
- * Función que genera una card de un pokémon dependiendo de la información dada y la agrega al elemento HTML dado como padre.
+ * Función que genera una card de un pokémon dependiendo de la información dada.
  * @param {Object} pokemon - Objeto que contiene la información del pokémon.
  * @param {string} pokemon.name - Nombre del pokémon.
  * @param {number} pokemon.pokedexNumber - Numero de la pokedex del pokémon.
  * @param {Array<string>} pokemon.typeNames - Nombres de los tipos del pokémon.
  * @param {string} pokemon.sprite - URL de la imagen del pokémon.
- * @param {HTMLElement} parent - Elemento padre donde se añadirá la card.
+ * @returns {HTMLElement} - Elemento li con información del pokémon.
  */
 
-export const generatePokemonCard = (
-    { name, pokedexNumber, typeNames, sprite },
-    parent
-) => {
+export const generatePokemonCard = ({
+    name,
+    pokedexNumber,
+    typeNames,
+    sprite,
+}) => {
     const newCard = document.createElement("li");
     newCard.classList.add("pokemon-card");
     newCard.classList.add(`type-${typeNames[0]}`);
@@ -21,7 +23,7 @@ export const generatePokemonCard = (
     newCard.innerHTML = `
     <a href="">
         <div class="card-header">
-            <h2>${name}</h2>
+            <h2>${name.replace(name[0], name[0].toUpperCase())}</h2>
             <span>N° ${pokedexNumber}</span>
         </div>
         <div class="card-info">
@@ -40,7 +42,7 @@ export const generatePokemonCard = (
     <a/>
     `;
 
-    parent.appendChild(newCard);
+    return newCard;
 };
 
 // Genera elemento li con información de los tipos del pokémon.
