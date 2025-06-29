@@ -17,7 +17,6 @@ export const generatePokemonCard = ({
     const newCard = document.createElement("li");
     newCard.classList.add("pokemon-card");
     newCard.classList.add(`type-${typeNames[0]}`);
-
     newCard.innerHTML = `
     <a href="">
         <div class="card-header">
@@ -37,7 +36,7 @@ export const generatePokemonCard = ({
             </div>
 
         </div>
-    <a/>
+    </a>
     `;
 
     return newCard;
