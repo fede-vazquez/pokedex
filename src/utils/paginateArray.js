@@ -1,10 +1,11 @@
 /**
- * Función que devuelve un objeto que contiene un array de elementos paginados y el número total de páginas.
+ * Función que pagina un array dado en uno solo.
  * @param {Array} array - Array a paginar.
- * @param {number} pageSize - Número de elementos por página.
+ * @param {Number} pageSize - Número de elementos por página.
+ * @returns {Object} - Objeto con un método para seleccionar una página y una variable para saber la cantidad de páginas.
  */
 
-export const paginationArray = (array, pageSize) => {
+export const paginateArray = (array, pageSize) => {
     // Paginación del array con una cantidad de elementos por cada página
     const pages = [];
     for (let i = 0; i < array.length; i = i + pageSize) {
