@@ -16,7 +16,6 @@ a {
     display: grid;
     grid-template-columns: auto;
     gap: 20px;
-    padding: 20px;
     width: fit-content;
     margin: auto;
 }
@@ -38,6 +37,8 @@ a {
 .card-img {
     padding: 0 10px;
     border-left: 1px solid #f0f0f0;
+    width: 100;
+    min-height: 100px;
     height: 100%;
 }
 

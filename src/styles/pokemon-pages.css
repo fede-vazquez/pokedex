@@ -1,0 +1,21 @@
+.controllers-container {
+    display: flex;
+    gap: 10px;
+    text-align: center;
+    margin: auto;
+    width: fit-content;
+    font-size: x-large;
+    margin-top: 10px;
+}
+
+.page-number-controller {
+    cursor: pointer;
+    padding: 10px;
+
+    transition: all 500ms;
+    border-radius: 20px;
+
+    &:hover {
+        background-color: #333;
+    }
+}

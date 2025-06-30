@@ -1,12 +1,24 @@
-import { generatePokemonList } from "./components/generatePokemonList";
-import { pokemonsData } from "./data/pokemonsData";
+import { getGenerationIDs } from "./apiRequests/getGenerationIDs";
+import { generateGenerationList } from "./components/generateGenerationList";
+import { getAllPokemonInfo } from "./apiRequests/getAllPokemonsInfo";
+import { getPokemonsIDByGeneration } from "./apiRequests/getPokemonIdsByGeneration";
+import { generatePokemonPages } from "./components/generatePokemonPages";
 import "./style.css";
-import { paginationArray } from "./utils/paginationArray";
 
 const app = document.querySelector("#app");
 
-const pages = paginationArray(pokemonsData, 20);
+const generationIDs = await getGenerationIDs();
+const genList = generateGenerationList(generationIDs);
 
-const list = generatePokemonList(pages.getPage(2));
+app.appendChild(genList);
+const pokemonContainer = document.createElement("div");
 
-app.appendChild(list);
+app.appendChild(pokemonContainer);
+
+export async function handleChangeGen(genNumber) {
+    const ids = await getPokemonsIDByGeneration(genNumber);
+    let pokemons = await getAllPokemonInfo(ids);
+
+    pokemonContainer.innerText = "";
+    pokemonContainer.appendChild(generatePokemonPages(pokemons));
+}
