@@ -32,7 +32,7 @@ export const generatePokemonCard = ({
         </div>
 
             <div class="card-img">
-                <img src="${sprite}" alt="imágen de ${name}">
+                <img src="${sprite}" alt="imagen de ${name}">
             </div>
 
         </div>

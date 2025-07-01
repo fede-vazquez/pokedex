@@ -4,7 +4,7 @@ import { generatePokemonPagesControllers } from "./generatePokemonPagesControlle
 import "../styles/pokemon-pages.css";
 /**
  * Función que genera un section con pokemones paginados.
- * @param {Array<object>} pokemons - Lista total de pokemones para páginar.
+ * @param {Array<object>} pokemons - Lista total de pokemones para paginar.
  * @param {HTMLElement} - Elemento section con los pokemones paginados y sus controladores
  */
 

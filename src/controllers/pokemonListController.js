@@ -26,8 +26,35 @@ export const pokemonListController = (pokemons, pokemonContainer) => {
     }
 
     /**
-     *
-     * @param {Number} genNumber - Número de la generación que se quiere cargar
+     * Función que renderiza la lista filtrada de pokemones según su nombre o tipos.
+     * @param {"name | types"} attributeType - Nombre del pokémon por el que se va a filtrar.
+     * @param {String | Array} valueToFilter - Valor por el que se va a filtrar.
+     */
+    function filterPokemonByAttribute(attributeType, valueToFilter) {
+        let pokemonsFiltered = [];
+        switch (attributeType) {
+            case "name":
+                pokemonsFiltered = pokemons.filter(pokemon => {
+                    const name = pokemon.name.toLowerCase();
+                    return name.includes(valueToFilter.toLowerCase());
+                });
+                break;
+
+            case "types":
+                pokemonsFiltered = pokemons.filter(pokemon => {
+                    return valueToFilter.some(type =>
+                        pokemon.typeNames.includes(type.toLowerCase())
+                    );
+                });
+                break;
+        }
+
+        renderList(pokemonsFiltered);
+    }
+
+    /**
+     * Función que renderiza la lista de pokemones según su generación.
+     * @param {Number} genNumber - Número de la generación que se quiere cargar-
      */
     async function handleChangeGen(genNumber) {
         pokemonContainer.innerText = "Cargando";
@@ -41,15 +68,19 @@ export const pokemonListController = (pokemons, pokemonContainer) => {
 
     /**
      * Función que renderiza la lista
+     * @param {Array<object>} newPokemons - Nuevo array de objetos que se van a renderizar (opcional)
      */
 
-    function renderList() {
+    function renderList(newPokemons = []) {
         pokemonContainer.innerText = "";
-        pokemonContainer.appendChild(generatePokemonPages(pokemons));
+        pokemonContainer.appendChild(
+            generatePokemonPages(newPokemons || pokemons)
+        );
     }
 
     return {
         sortPokemonByAttribute,
+        filterPokemonByAttribute,
         handleChangeGen,
         renderList,
     };
