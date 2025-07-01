@@ -6,7 +6,7 @@ import { getPokemonGeneralInfoByID } from "./getPokemonGeneralInfoByID";
  * @returns {Promise<Array<{id: number, pokedexNumber: number, name: string, height: number, weight: number, sprite: string, typeNames: Array<string>}>>} - Array con promesas que devuelven la información de cada pokémon.
  */
 
-export async function getAllPokemonInfo(pokemonIds) {
+export function getAllPokemonInfo(pokemonIds) {
     const requests = [];
 
     pokemonIds.forEach(id => {

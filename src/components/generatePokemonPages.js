@@ -11,11 +11,11 @@ import "../styles/pokemon-pages.css";
 export const generatePokemonPages = pokemons => {
     let actualPage = 0;
 
-    let pokemonContainer = document.createElement("section");
+    let container = document.createElement("section");
 
-    const pageContainer = document.createElement("div");
+    const pagesContainer = document.createElement("div");
 
-    pokemonContainer.appendChild(pageContainer);
+    container.appendChild(pagesContainer);
 
     const pages = paginateArray(pokemons, 20);
 
@@ -29,10 +29,10 @@ export const generatePokemonPages = pokemons => {
             pageNumber <= pages.pagesCount &&
             pageNumber !== actualPage
         ) {
-            pageContainer.innerText = "";
+            pagesContainer.innerText = "";
             const newList = generatePokemonList(pages.getPage(pageNumber));
 
-            pageContainer.appendChild(newList);
+            pagesContainer.appendChild(newList);
             actualPage = pageNumber;
         }
     };
@@ -44,7 +44,7 @@ export const generatePokemonPages = pokemons => {
         handleChangePage
     );
 
-    pokemonContainer.appendChild(controllers);
+    container.appendChild(controllers);
 
-    return pokemonContainer;
+    return container;
 };
