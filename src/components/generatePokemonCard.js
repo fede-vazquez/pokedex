@@ -18,7 +18,7 @@ export const generatePokemonCard = ({
     newCard.classList.add("pokemon-card");
     newCard.classList.add(`type-${typeNames[0]}`);
     newCard.innerHTML = `
-    <a href="">
+    <a href="/details?id=${pokedexNumber}">
         <div class="card-header">
             <h2>${name.replace(name[0], name[0].toUpperCase())}</h2>
             <span>N° ${pokedexNumber}</span>

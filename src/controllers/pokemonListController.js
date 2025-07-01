@@ -10,16 +10,16 @@ import { generatePokemonPages } from "../components/generatePokemonPages";
 export const pokemonListController = (pokemons, pokemonContainer) => {
     /**
      * Función que ordena los pokemones por número de pokedex y los vuelve a mostrar.
-     * @param {"pokedexNumber" | "height" | "weight"} atributeName - Nombre del atributo por el que se va a ordenar
+     * @param {"pokedexNumber" | "height" | "weight"} attributeName - Nombre del atributo por el que se va a ordenar
      * @param {Boolean} isAsc - True si es ascendente, false si es descendente.
      */
-    function sortPokemonByAttribute(atributeName, isAsc = true) {
+    function sortPokemonByAttribute(attributeName, isAsc = true) {
         pokemonContainer.innerText = "Cargando";
 
         pokemons.sort((a, b) =>
             isAsc
-                ? a[atributeName] - b[atributeName]
-                : b[atributeName] - a[atributeName]
+                ? a[attributeName] - b[attributeName]
+                : b[attributeName] - a[attributeName]
         );
 
         renderList();
