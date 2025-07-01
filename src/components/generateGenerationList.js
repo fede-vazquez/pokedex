@@ -1,15 +1,14 @@
 import { generateGenerationBtn } from "./generateGenerationBtn";
-import { handleChargeGen } from "../utils/pokemonsController";
 import "../styles/generation-list.css";
+import { handleChangeGen } from "../main";
 
 /**
  * Función que genera elemento ul con una lista de generaciones pokémon para su selección.
  * @param {Array<number>} genIDs - IDs de generaciones pokémon.
- * @param {HTMLElement} pokemonContainer - Elemento donde van a estár los pokemones que se van a modificar.
  * @returns {HTMLElement} - Elemento ul que contiene toda la lista de generaciones para seleccionar.
  */
 
-export const generateGenerationList = (genIDs, pokemonContainer) => {
+export const generateGenerationList = genIDs => {
     const list = document.createElement("ul");
     list.classList.add("generation-list");
 
@@ -24,15 +23,22 @@ export const generateGenerationList = (genIDs, pokemonContainer) => {
 
         element.classList.add("active-gen");
 
-        handleChargeGen(genNumber, pokemonContainer);
+        handleChangeGen(genNumber);
     };
 
+    // Cargar cada botón para cambiar la generación.
     for (let i = 0; i < genIDs.length; i++) {
         const genID = genIDs[i];
 
         const listItem = generateGenerationBtn(genID, handleClick);
         list.appendChild(listItem);
     }
+
+    // Botón para pedir todas las generaciones.
+    const allGenBtn = document.createElement("button");
+    allGenBtn.classList.add("generation-btn");
+    allGenBtn.innerText = "Todas";
+    list.append(allGenBtn);
 
     // La primera renderización le agregamos la clase active al primer elemento de la lista.
     list.firstChild.classList.add("active-gen");
