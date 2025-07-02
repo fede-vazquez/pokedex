@@ -12,3 +12,9 @@
 .types-container {
     padding: 0 5px;
 }
+
+.card-types {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}

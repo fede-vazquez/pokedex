@@ -1,0 +1,40 @@
+@import "./type-pokemon-colors.css";
+
+a {
+    all: unset;
+    cursor: pointer;
+}
+
+.pokemon-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.pokemon-img-container {
+    position: relative;
+    background-color: var(--type-bg-color);
+    width: 100%;
+}
+
+.pokemon-img-container img {
+    max-width: 100%;
+}
+
+.pokedex-number {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 2rem;
+
+    background-color: #44444455;
+    border-end-start-radius: 30px;
+}
+
+.evolution-chain .types-container {
+    text-align: start;
+}
