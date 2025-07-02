@@ -13,7 +13,7 @@ export const generateGenerationBtn = (genID, handleChangeGen) => {
     genBtn.classList.add("generation-btn");
     genBtn.innerText = `Generación: ${genID}`;
 
-    genBtn.onclick = e => handleChangeGen(e.target.parentNode, genID);
+    genBtn.onclick = e => handleChangeGen(e.target, genID);
 
     listItem.appendChild(genBtn);
 

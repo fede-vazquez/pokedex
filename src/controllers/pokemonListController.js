@@ -1,10 +1,10 @@
 import { getAllPokemonInfo } from "../apiRequests/getAllPokemonsInfo";
-import { getPokemonIDsByGeneration } from "../apiRequests/getPokemonIdsByGeneration";
+import { getPokemonIDsByGeneration } from "../apiRequests/getPokemonIDsByGeneration";
 import { generatePokemonPages } from "../components/generatePokemonPages";
 
 /**
  * Función que retorna métodos para controlar el contenido de la lista de pokemones.
- * @param {Array<object>} pokemons - Lista de pokemones inicial.
+ * @param {Array<Pokemon>} pokemons - Lista de pokemones inicial.
  * @param {HTMLElement} pokemonContainer - Contenedor donde estará la lista de pokemones.
  */
 export const pokemonListController = (pokemons, pokemonContainer) => {
@@ -27,7 +27,7 @@ export const pokemonListController = (pokemons, pokemonContainer) => {
 
     /**
      * Función que renderiza la lista filtrada de pokemones según su nombre o tipos.
-     * @param {"name | types"} attributeType - Nombre del pokémon por el que se va a filtrar.
+     * @param {"name" | "types"} attributeType - Nombre del pokémon por el que se va a filtrar.
      * @param {String | Array} valueToFilter - Valor por el que se va a filtrar.
      */
     function filterPokemonByAttribute(attributeType, valueToFilter) {
@@ -36,12 +36,14 @@ export const pokemonListController = (pokemons, pokemonContainer) => {
             case "name":
                 pokemonsFiltered = pokemons.filter(pokemon => {
                     const name = pokemon.name.toLowerCase();
+                    // @ts-ignore
                     return name.includes(valueToFilter.toLowerCase());
                 });
                 break;
 
             case "types":
                 pokemonsFiltered = pokemons.filter(pokemon => {
+                    // @ts-ignore
                     return valueToFilter.some(type =>
                         pokemon.typeNames.includes(type.toLowerCase())
                     );
@@ -71,7 +73,7 @@ export const pokemonListController = (pokemons, pokemonContainer) => {
      * @param {Array<object>} newPokemons - Nuevo array de objetos que se van a renderizar (opcional)
      */
 
-    function renderList(newPokemons) {
+    function renderList(newPokemons = null) {
         pokemonContainer.innerText = "";
         pokemonContainer.appendChild(
             generatePokemonPages(newPokemons || pokemons)

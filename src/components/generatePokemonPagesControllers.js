@@ -15,7 +15,7 @@ export const generatePokemonPagesControllers = (
     for (let page = 1; page <= totalPages; page++) {
         const listItem = document.createElement("li");
         listItem.classList.add("page-number-controller");
-        listItem.innerText = page;
+        listItem.innerText = String(page);
 
         listItem.onclick = () => handleChangePage(page);
 

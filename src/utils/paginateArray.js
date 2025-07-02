@@ -13,11 +13,11 @@ export const paginateArray = (array, pageSize) => {
 
     /**
      * Método que devuelve la página por su número. (página 1 = pages[0])
-     * @param {Number} - Número de página.
+     * @param {Number} pageNumber - Número de página.
      * @returns {Array<object>} - Array de la página con objetos
      */
-    const getPage = number => {
-        return pages[number - 1] ? pages[number - 1] : [];
+    const getPage = pageNumber => {
+        return pages[pageNumber - 1] ? pages[pageNumber - 1] : [];
     };
 
     return {

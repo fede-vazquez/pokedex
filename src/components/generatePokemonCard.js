@@ -2,12 +2,7 @@ import { generatePokemonTypesList } from "./generatePokemonTypesList";
 
 /**
  * Función que genera una card de un pokémon dependiendo de la información dada.
- * @param {Object} pokemon - Objeto que contiene la información del pokémon.
- * @param {string} pokemon.id - ID del pokémon.
- * @param {string} pokemon.name - Nombre del pokémon.
- * @param {number} pokemon.pokedexNumber - Numero de la pokedex del pokémon.
- * @param {Array<string>} pokemon.typeNames - Nombres de los tipos del pokémon.
- * @param {{normal: String, shiny: String}} pokemon.sprites - Objeto que contiene las URLs de los sprites de los pokemones.
+ * @param {Pokemon} pokemon - Objeto que contiene la información del pokémon.
  * @returns {HTMLElement} - Elemento li con información del pokémon.
  */
 
@@ -18,8 +13,6 @@ export const generatePokemonCard = ({
     typeNames,
     sprites,
 }) => {
-    console.log(sprites);
-
     const newCard = document.createElement("li");
     newCard.classList.add("pokemon-card");
     newCard.classList.add(`type-${typeNames[0]}`);

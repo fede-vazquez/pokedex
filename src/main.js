@@ -1,7 +1,7 @@
 import { generateGenerationList } from "./components/generateGenerationList";
 import { getGenerationIDs } from "./apiRequests/getGenerationIDs";
 import { pokemonListController } from "./controllers/pokemonListController";
-import { getPokemonIDsByGeneration } from "./apiRequests/getPokemonIdsByGeneration";
+import { getPokemonIDsByGeneration } from "./apiRequests/getPokemonIDsByGeneration";
 import { getAllPokemonInfo } from "./apiRequests/getAllPokemonsInfo";
 import "./style.css";
 
@@ -27,5 +27,4 @@ export const {
     renderList,
 } = pokemonListController(pokemons, pokemonContainer);
 
-// renderList();
-filterPokemonByAttribute("name", "bul");
+renderList();

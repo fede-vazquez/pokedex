@@ -15,18 +15,29 @@ export const endpoints = Object.freeze({
 
     /**
      *  Función que recibe un id y devuelve el endpoint para obtener un pokémon por su id.
-     * @param {number} id - Número del pokémon.
+     * @param {Number} id - Número del pokémon.
      * @returns {String} - Endpoint personalizado para hacer la petición a la API
      */
     pokemonById: id => POKEMONS + "/" + id,
 
     /**
      * Función que recibe un número de generación y devuelve el endpoint para obtener los pokemones de dicha generación.
-     * @param {number} generationNumber - Número de la generación.
+     * @param {Number} generationNumber - Número de la generación.
      * @returns {String} - Endpoint personalizado para hacer la petición a la API
      */
     pokemonsByGeneration: generationNumber =>
         API_URL + "/generation/" + generationNumber,
 
+    /**
+     * Función que devuelve un objeto con las URLs de los art-works originales.
+     * @param {Number} id - Número del pokémon.
+     * @returns {{normal: String, shiny: String}} - URLs de los art-works originales.
+     */
+    oficialArtWorkURLsByPokemonId: id => {
+        return {
+            normal: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`,
+            shiny: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/${id}.png`,
+        };
+    },
     GENERATIONS,
 });

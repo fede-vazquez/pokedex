@@ -4,7 +4,7 @@ import { generatePokemonCard } from "./generatePokemonCard";
 
 /**
  * Función que genera una lista de cards de pokemones dada una lista de pokemones.
- * @param {Array<object>} pokemonList - lista de pokemones.
+ * @param {Array<Pokemon>} pokemonList - lista de pokemones.
  * @return {HTMLElement} - Section con lista de pokemones.
  */
 export const generatePokemonList = pokemonList => {

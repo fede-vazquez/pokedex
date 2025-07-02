@@ -21,7 +21,7 @@ export const generateGenerationList = genIDs => {
         const selectedItem = document.querySelector(".active-gen");
         selectedItem?.classList.remove("active-gen");
 
-        element.classList.add("active-gen");
+        element.parentElement.classList.add("active-gen");
 
         handleChangeGen(genNumber);
     };
@@ -41,7 +41,7 @@ export const generateGenerationList = genIDs => {
     list.append(allGenBtn);
 
     // La primera renderización le agregamos la clase active al primer elemento de la lista.
-    list.firstChild.classList.add("active-gen");
+    list.firstElementChild.classList.add("active-gen");
 
     return list;
 };
