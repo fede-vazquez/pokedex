@@ -71,7 +71,7 @@ export const pokemonListController = (pokemons, pokemonContainer) => {
      * @param {Array<object>} newPokemons - Nuevo array de objetos que se van a renderizar (opcional)
      */
 
-    function renderList(newPokemons = []) {
+    function renderList(newPokemons) {
         pokemonContainer.innerText = "";
         pokemonContainer.appendChild(
             generatePokemonPages(newPokemons || pokemons)

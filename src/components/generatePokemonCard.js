@@ -1,6 +1,7 @@
 /**
  * Función que genera una card de un pokémon dependiendo de la información dada.
  * @param {Object} pokemon - Objeto que contiene la información del pokémon.
+ * @param {string} pokemon.id - ID del pokémon.
  * @param {string} pokemon.name - Nombre del pokémon.
  * @param {number} pokemon.pokedexNumber - Numero de la pokedex del pokémon.
  * @param {Array<string>} pokemon.typeNames - Nombres de los tipos del pokémon.
@@ -9,6 +10,7 @@
  */
 
 export const generatePokemonCard = ({
+    id,
     name,
     pokedexNumber,
     typeNames,
@@ -18,7 +20,7 @@ export const generatePokemonCard = ({
     newCard.classList.add("pokemon-card");
     newCard.classList.add(`type-${typeNames[0]}`);
     newCard.innerHTML = `
-    <a href="/details?id=${pokedexNumber}">
+    <a href="/details?id=${id}">
         <div class="card-header">
             <h2>${name.replace(name[0], name[0].toUpperCase())}</h2>
             <span>N° ${pokedexNumber}</span>
