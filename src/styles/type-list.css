@@ -1,0 +1,14 @@
+.type-item {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 12px;
+    font-weight: bold;
+    text-transform: capitalize;
+    background-color: var(--type-bg-color);
+    box-shadow: 0 0 5px #00000033;
+}
+
+.types-container {
+    padding: 0 5px;
+}

@@ -6,7 +6,7 @@ import { endpoints } from "./endpoints";
  * @returns {Promise<Array<number>>} - Array de ids de los pokemones de la generación.
  */
 
-export async function getPokemonsIDByGeneration(generationNumber) {
+export async function getPokemonIDsByGeneration(generationNumber) {
     const req = await fetch(endpoints.pokemonsByGeneration(generationNumber));
     if (!req.ok) return [];
     const res = await req.json();

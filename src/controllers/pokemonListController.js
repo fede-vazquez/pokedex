@@ -1,5 +1,5 @@
 import { getAllPokemonInfo } from "../apiRequests/getAllPokemonsInfo";
-import { getPokemonsIDByGeneration } from "../apiRequests/getPokemonIdsByGeneration";
+import { getPokemonIDsByGeneration } from "../apiRequests/getPokemonIdsByGeneration";
 import { generatePokemonPages } from "../components/generatePokemonPages";
 
 /**
@@ -58,7 +58,7 @@ export const pokemonListController = (pokemons, pokemonContainer) => {
      */
     async function handleChangeGen(genNumber) {
         pokemonContainer.innerText = "Cargando";
-        const ids = await getPokemonsIDByGeneration(genNumber);
+        const ids = await getPokemonIDsByGeneration(genNumber);
         pokemons = await getAllPokemonInfo(ids);
 
         pokemons.sort((a, b) => a.id - b.id);

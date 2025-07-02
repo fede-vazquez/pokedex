@@ -1,3 +1,5 @@
+import { generatePokemonTypesList } from "./generatePokemonTypesList";
+
 /**
  * Función que genera una card de un pokémon dependiendo de la información dada.
  * @param {Object} pokemon - Objeto que contiene la información del pokémon.
@@ -28,13 +30,7 @@ export const generatePokemonCard = ({
             <span>N° ${pokedexNumber}</span>
         </div>
         <div class="card-info">
-        <div class="card-types-container">
-            <h5>Tipos</h5>
-            <ul class="card-types">
-                ${typesItems(typeNames)}
-            </ul>
-        </div>
-
+        ${generatePokemonTypesList(typeNames).outerHTML}
             <div class="card-img">
                 <img src="${sprites.normal}" alt="imagen de ${name}">
             </div>
@@ -44,11 +40,4 @@ export const generatePokemonCard = ({
     `;
 
     return newCard;
-};
-
-// Genera elemento li con información de los tipos del pokémon.
-const typesItems = pokemonTypes => {
-    return pokemonTypes
-        .map(type => `<li class="type-item type-${type}">${type}</li>`)
-        .join("");
 };

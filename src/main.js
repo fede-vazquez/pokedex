@@ -1,7 +1,7 @@
 import { generateGenerationList } from "./components/generateGenerationList";
 import { getGenerationIDs } from "./apiRequests/getGenerationIDs";
 import { pokemonListController } from "./controllers/pokemonListController";
-import { getPokemonsIDByGeneration } from "./apiRequests/getPokemonIdsByGeneration";
+import { getPokemonIDsByGeneration } from "./apiRequests/getPokemonIdsByGeneration";
 import { getAllPokemonInfo } from "./apiRequests/getAllPokemonsInfo";
 import "./style.css";
 
@@ -17,7 +17,7 @@ const pokemonContainer = document.createElement("div");
 pokemonContainer.innerHTML = "Cargando";
 app.appendChild(pokemonContainer);
 
-const pokemonsIds = await getPokemonsIDByGeneration(1);
+const pokemonsIds = await getPokemonIDsByGeneration(1);
 const pokemons = await getAllPokemonInfo(pokemonsIds);
 
 export const {
@@ -27,4 +27,5 @@ export const {
     renderList,
 } = pokemonListController(pokemons, pokemonContainer);
 
-renderList();
+// renderList();
+filterPokemonByAttribute("name", "bul");
