@@ -5,7 +5,7 @@
  * @param {string} pokemon.name - Nombre del pokémon.
  * @param {number} pokemon.pokedexNumber - Numero de la pokedex del pokémon.
  * @param {Array<string>} pokemon.typeNames - Nombres de los tipos del pokémon.
- * @param {string} pokemon.sprite - URL de la imagen del pokémon.
+ * @param {{normal: String, shiny: String}} pokemon.sprites - Objeto que contiene las URLs de los sprites de los pokemones.
  * @returns {HTMLElement} - Elemento li con información del pokémon.
  */
 
@@ -14,8 +14,10 @@ export const generatePokemonCard = ({
     name,
     pokedexNumber,
     typeNames,
-    sprite,
+    sprites,
 }) => {
+    console.log(sprites);
+
     const newCard = document.createElement("li");
     newCard.classList.add("pokemon-card");
     newCard.classList.add(`type-${typeNames[0]}`);
@@ -34,7 +36,7 @@ export const generatePokemonCard = ({
         </div>
 
             <div class="card-img">
-                <img src="${sprite}" alt="imagen de ${name}">
+                <img src="${sprites.normal}" alt="imagen de ${name}">
             </div>
 
         </div>

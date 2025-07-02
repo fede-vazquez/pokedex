@@ -3,7 +3,7 @@ import { endpoints } from "./endpoints";
 /**
  * Función que solicita la información general de un pokémon por su id.
  * @param {number} searchId - Id del pokémon.
- * @returns {Promise<{id: number, pokedexNumber: number, name: string, height: number, weight: number, sprite: string, typeNames: Array<string>}>}
+ * @returns {Promise<{id: number, pokedexNumber: number, name: string, height: number, weight: number, sprites: {normal: String, shiny: String}, typeNames: Array<string>}>}
  */
 export async function getPokemonGeneralInfoByID(searchId) {
     const req = await fetch(endpoints.pokemonById(searchId));
@@ -17,20 +17,18 @@ export async function getPokemonGeneralInfoByID(searchId) {
         name,
         height,
         weight,
-        sprites: { front_default: sprite },
+        sprites: { front_default: normal, front_shiny: shiny },
         types,
     } = res;
 
     const typeNames = types.map(({ type }) => type.name);
-    return { id, pokedexNumber, name, height, weight, sprite, typeNames };
+    return {
+        id,
+        pokedexNumber,
+        name,
+        height,
+        weight,
+        sprites: { normal, shiny },
+        typeNames,
+    };
 }
-
-/*
-    id -> number
-    pokedexNumber -> number
-    name -> string
-    height -> number
-    weight -> number
-    sprite -> string
-    types -> array de objetos -> {name}
-*/
