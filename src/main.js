@@ -4,6 +4,7 @@ import { pokemonListController } from "./controllers/pokemonListController";
 import { getPokemonIDsByGeneration } from "./apiRequests/getPokemonIDsByGeneration";
 import { getAllPokemonInfo } from "./apiRequests/getAllPokemonsInfo";
 import "./style.css";
+import { generateFilterAndSortPanel } from "./components/generateFilterAndSortPanel";
 
 const app = document.querySelector("#app");
 
@@ -11,6 +12,9 @@ const app = document.querySelector("#app");
 const generationIDs = await getGenerationIDs();
 const genList = generateGenerationList(generationIDs);
 app.appendChild(genList);
+
+// Panel controlador para filtrar y ordenar.
+app.appendChild(generateFilterAndSortPanel());
 
 // Contenedor principal de los pokemones
 const pokemonContainer = document.createElement("div");

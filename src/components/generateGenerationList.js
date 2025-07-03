@@ -13,9 +13,9 @@ export const generateGenerationList = genIDs => {
     list.classList.add("generation-list");
 
     /**
-     * Función que cambia la generación mostrada además del estílo de botones.
+     * Función que cambia la generación mostrada además del estilo de botones.
      * @param {HTMLElement} element - Elemento que dispara el handle.
-     * @param {*} genNumber - Número de generación a la cual se va a cambiar.
+     * @param {Number} genNumber - Número de generación a la cual se va a cambiar.
      */
     const handleClick = (element, genNumber) => {
         const selectedItem = document.querySelector(".active-gen");
@@ -33,12 +33,6 @@ export const generateGenerationList = genIDs => {
         const listItem = generateGenerationBtn(genID, handleClick);
         list.appendChild(listItem);
     }
-
-    // Botón para pedir todas las generaciones.
-    const allGenBtn = document.createElement("button");
-    allGenBtn.classList.add("generation-btn");
-    allGenBtn.innerText = "Todas";
-    list.append(allGenBtn);
 
     // La primera renderización le agregamos la clase active al primer elemento de la lista.
     list.firstElementChild.classList.add("active-gen");
