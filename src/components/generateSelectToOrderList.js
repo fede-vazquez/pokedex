@@ -20,17 +20,16 @@ export const generateSelectToOrderList = () => {
     const selectOrder = document.createElement("select");
     selectOrder.id = "select-order";
     selectOrder.classList.add("select-order");
+    selectOrder.onchange = handleSelectChange;
 
     Object.entries(options).forEach(option => {
         const optionElement = document.createElement("option");
         optionElement.value = option[0];
         optionElement.innerText = option[1];
+        optionElement.selected = getOptions().sortByAttribute.type == option[0];
         selectOrder.appendChild(optionElement);
     });
 
-    // Setea el valor del select según la opción actual
-    selectOrder.value = getOptions().sortByAttribute.type;
-    selectOrder.onchange = handleSelectChange;
     selectContainer.appendChild(selectOrder);
 
     // Crea el botón para cambiar el orden ascendente/descendente

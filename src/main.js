@@ -1,8 +1,7 @@
-import { generateGenerationList } from "./components/generateGenerationList";
 import { getGenerationIDs } from "./apiRequests/getGenerationIDs";
 import { getPokemonIDsByGeneration } from "./apiRequests/getPokemonIDsByGeneration";
 import { getAllPokemonInfo } from "./apiRequests/getAllPokemonsInfo";
-import { generateFilterAndSortPanel } from "./components/generateFilterAndSortPanel";
+import { generateListControlPanel } from "./components/generateListControlPanel";
 import { pokemonListReducer } from "./controllers/pokemonListReducer";
 import { listOptionsController } from "./controllers/listOptionsController";
 import { getTypeNames } from "./apiRequests/getTypeNames";
@@ -23,7 +22,6 @@ const pokemonContainer = document.createElement("div");
 try {
     // Lista para navegar entre generaciones
     const generationIDs = await getGenerationIDs();
-    const genList = generateGenerationList(generationIDs);
 
     // Panel controlador para filtrar y ordenar.
     const typesList = await getTypeNames();
@@ -32,8 +30,7 @@ try {
     pokemons = await getAllPokemonInfo(pokemonsIds);
 
     app.appendChild(generateHeader());
-    app.appendChild(genList);
-    app.appendChild(generateFilterAndSortPanel(typesList));
+    app.appendChild(generateListControlPanel(typesList, generationIDs));
     app.appendChild(pokemonContainer);
     app.appendChild(generateFooter());
 } catch (error) {

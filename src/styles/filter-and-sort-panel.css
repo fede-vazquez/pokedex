@@ -13,7 +13,8 @@
 
 .types-to-filter-container,
 .search-input-container,
-.select-container {
+.select-container,
+.generation-select-container {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
@@ -25,7 +26,8 @@
 }
 
 #types-selector,
-#select-order {
+#select-order,
+#generation-select {
     display: block;
     padding: 5px 15px;
     border-radius: 10px;
