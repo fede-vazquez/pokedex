@@ -1,5 +1,5 @@
-import { getOptions, renderPokemons, setOptions } from "../main";
 import { generateTypesToFilterList } from "./generateTypesToFilterList";
+import { generateSearchInput } from "./generateSearchInput";
 import "../styles/filter-and-sort-panel.css";
 /**
  * Función que devuelve un panel de controles para filtrar.
@@ -13,30 +13,8 @@ export const generateFilterAndSortPanel = types => {
     // Buscador por tipo.
     container.append(generateTypesToFilterList(types));
 
-    // Buscador por nombre.
-    const searchInputContainer = document.createElement("div");
-    searchInputContainer.classList.add("search-input-container");
-
-    const labelSearch = document.createElement("label");
-    labelSearch.innerText = "Buscar por nombre:";
-    labelSearch.htmlFor = "search-input";
-    searchInputContainer.appendChild(labelSearch);
-
-    const searchInput = document.createElement("input");
-    searchInput.classList.add("search-input");
-    searchInput.type = "search";
-    searchInput.id = "search-input";
-
-    searchInput.value = getOptions().nameToFilter || "";
-    searchInput.oninput = handleSearch;
-    searchInputContainer.appendChild(searchInput);
-
     // Agrega el contenedor de búsqueda al panel.
-    container.appendChild(searchInputContainer);
+    container.appendChild(generateSearchInput());
 
     return container;
-};
-
-const handleSearch = e => {
-    renderPokemons(setOptions({ nameToFilter: e.target.value.trim() }));
 };
