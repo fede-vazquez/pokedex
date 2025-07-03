@@ -7,6 +7,8 @@ import { pokemonListReducer } from "./controllers/pokemonListReducer";
 import { listOptionsController } from "./controllers/listOptionsController";
 import { getTypeNames } from "./apiRequests/getTypeNames";
 import { errorPage } from "./pages/errorPage";
+import { generateHeader } from "./components/generateHeader";
+import { generateFooter } from "./components/generateFooter";
 import "./style.css";
 
 const app = document.querySelector("#app");
@@ -29,9 +31,11 @@ try {
     const pokemonsIds = await getPokemonIDsByGeneration(getOptions().genNumber);
     pokemons = await getAllPokemonInfo(pokemonsIds);
 
+    app.appendChild(generateHeader());
     app.appendChild(genList);
     app.appendChild(generateFilterAndSortPanel(typesList));
     app.appendChild(pokemonContainer);
+    app.appendChild(generateFooter());
 } catch (error) {
     app.appendChild(
         errorPage({

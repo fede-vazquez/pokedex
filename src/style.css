@@ -17,6 +17,8 @@ ul {
 body {
     background-color: var(--background-color);
     color: var(--color);
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .dark-mode {
