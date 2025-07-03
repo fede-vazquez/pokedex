@@ -9,6 +9,7 @@ import { pokemonListReducer } from "./controllers/pokemonListReducer";
 import { listOptionsController } from "./controllers/listOptionsController";
 
 const app = document.querySelector("#app");
+export const { getOptions, setOptions } = listOptionsController();
 
 // Lista para navegar entre generaciones
 const generationIDs = await getGenerationIDs();
@@ -22,20 +23,9 @@ app.appendChild(genList);
 const pokemonContainer = document.createElement("div");
 app.appendChild(pokemonContainer);
 
-export const { getOptions, setOptions } = listOptionsController();
-
 const pokemonsIds = await getPokemonIDsByGeneration(getOptions().genNumber);
 const pokemons = await getAllPokemonInfo(pokemonsIds);
 
 export const renderPokemons = pokemonListReducer(pokemons, pokemonContainer);
 
-/**@type {ListOptions} */
-let defaultListOptions = {
-    genNumber: 1,
-    nameToFilter: "",
-    typesToFilter: [],
-    sortByAttribute: { type: "pokedexNumber", isAsc: true },
-    lastPage: 1,
-};
-
-renderPokemons(getOptions() || defaultListOptions);
+renderPokemons(getOptions());

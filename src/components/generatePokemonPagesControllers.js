@@ -1,23 +1,27 @@
 /**
- *
+ * Función que devuelve componente ul con los controles para cambiar entre páginas.
  * @param {Number} totalPages - Número total de páginas.
- * @param {Function} handleChangePage - Función que re renderiza la lista de pokemones según el número la página.
+ * @param {Function} handleClick - Función que re renderiza la lista de pokemones según el número la página.
+ * @param {Number} lastPage - Ultima página cargada.
  * @return {HTMLElement} - Elemento ul con controladores para la paginación.
  */
 export const generatePokemonPagesControllers = (
     totalPages,
-    handleChangePage
+    handleClick,
+    lastPage
 ) => {
     const controllersContainer = document.createElement("ul");
     controllersContainer.classList.add("controllers-container");
 
-    // Por cada página agregamos un li que al apretarlo se re renderice la página de pokemones.
+    // Por cada página agregamos un li que al apretarlo se re renderiza la página de pokemones.
     for (let page = 1; page <= totalPages; page++) {
         const listItem = document.createElement("li");
         listItem.classList.add("page-number-controller");
+
+        if (page == lastPage) listItem.classList.add("active-page");
         listItem.innerText = String(page);
 
-        listItem.onclick = () => handleChangePage(page);
+        listItem.onclick = e => handleClick(page, e.target);
 
         controllersContainer.appendChild(listItem);
     }
