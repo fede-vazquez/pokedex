@@ -1,10 +1,29 @@
 /**
  * @typedef {Object} Pokemon
- * @property {number} id - ID interno del Pokémon.
- * @property {number} pokedexNumber - Número en la Pokédex.
- * @property {string} name - Nombre del Pokémon.
- * @property {number} height - Altura del Pokémon.
- * @property {number} weight - Peso del Pokémon.
- * @property {{ normal: string, shiny: string }} sprites - Imágenes normales y shiny.
- * @property {Array<string>} typeNames - Tipos del Pokémon (por ejemplo: ["grass", "poison"]).
+ * @property {Number} id - ID interno del Pokémon.
+ * @property {Number} pokedexNumber - Número en la Pokedex.
+ * @property {String} name - Nombre del Pokémon.
+ * @property {Number} height - Altura del Pokémon.
+ * @property {Number} weight - Peso del Pokémon.
+ * @property {{ normal: String, shiny: String }} sprites - Sprites, normal y shiny.
+ * @property {Array<String>} typeNames - Tipos del Pokémon (por ejemplo: ["grass", "poison"]).
+ */
+
+/**
+ * @typedef {Object} DetailedPokemon
+ * @property {Number} id - ID interno del Pokémon.
+ * @property {Number} pokedexNumber - Número en la Pokedex.
+ * @property {String} name - Nombre del Pokémon.
+ * @property {Number} height - Altura del Pokémon.
+ * @property {Number} weight - Peso del Pokémon.
+ * @property {{ normal: String, shiny: String }} artWorks - Imágenes, normal y shiny.
+ * @property {Array<String>} typeNames - Tipos del Pokémon (por ejemplo: ["grass", "poison"]).
+ * @property {Array<{name: String}>} baseStats
+ * @property {Array<Pokemon>} evolutionChain - Cadena evolutiva del pokemon.
+ */
+
+/**
+ * @typedef {Object} EvolutionChain
+ * @property {Array<EvolutionChain>} evolves_to - Array con las demás cadenas evolutivas.
+ * @property {{name: String, url: string}} species - Datos sobre un pokemon específico.
  */
