@@ -1,6 +1,6 @@
 import { generateGenerationBtn } from "./generateGenerationBtn";
-import "../styles/generation-list.css";
 import { getOptions, renderPokemons, setOptions } from "../main";
+import "../styles/generation-list.css";
 
 /**
  * Función que genera elemento ul con una lista de generaciones pokémon para su selección.

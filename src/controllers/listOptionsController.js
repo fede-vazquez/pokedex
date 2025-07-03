@@ -21,7 +21,7 @@ export function listOptionsController() {
     /**
      * Función que setea y devuelve las nuevas opciones al listOptions.
      * @param {ListOptions} newOptions - Nuevas opciones del renderizado.
-     * @returns {Object} - Nuevo objeto de opciones modificado.
+     * @returns {ListOptions} - Nuevo objeto de opciones modificado.
      */
     const setOptions = newOptions => {
         const newListOptions = { ...getOptions(), ...newOptions };

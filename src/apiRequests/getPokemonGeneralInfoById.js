@@ -7,9 +7,8 @@ import { endpoints } from "./endpoints";
  */
 export async function getPokemonGeneralInfoByID(searchId) {
     const req = await fetch(endpoints.pokemonById(searchId));
-    if (!req.ok) throw new Error("No se encontro la información del pokemon.");
+    if (!req.ok) throw new Error("No se encontró la información del pokemon.");
 
-    // Documentación para ver respuesta de la api: https://pokeapi.co/docs/v2#pokemon
     const res = await req.json();
 
     const {

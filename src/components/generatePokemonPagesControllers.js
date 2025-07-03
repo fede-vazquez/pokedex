@@ -14,14 +14,14 @@ export const generatePokemonPagesControllers = (
     controllersContainer.classList.add("controllers-container");
 
     // Por cada página agregamos un li que al apretarlo se re renderiza la página de pokemones.
-    for (let page = 1; page <= totalPages; page++) {
+    for (let pageNumber = 1; pageNumber <= totalPages; pageNumber++) {
         const listItem = document.createElement("li");
         listItem.classList.add("page-number-controller");
 
-        if (page == lastPage) listItem.classList.add("active-page");
-        listItem.innerText = String(page);
+        if (pageNumber == lastPage) listItem.classList.add("active-page");
+        listItem.innerText = String(pageNumber);
 
-        listItem.onclick = e => handleClick(page, e.target);
+        listItem.onclick = e => handleClick(pageNumber, e.target);
 
         controllersContainer.appendChild(listItem);
     }

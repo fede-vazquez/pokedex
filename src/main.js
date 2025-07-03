@@ -2,10 +2,11 @@ import { generateGenerationList } from "./components/generateGenerationList";
 import { getGenerationIDs } from "./apiRequests/getGenerationIDs";
 import { getPokemonIDsByGeneration } from "./apiRequests/getPokemonIDsByGeneration";
 import { getAllPokemonInfo } from "./apiRequests/getAllPokemonsInfo";
-import "./style.css";
 import { generateFilterAndSortPanel } from "./components/generateFilterAndSortPanel";
 import { pokemonListReducer } from "./controllers/pokemonListReducer";
 import { listOptionsController } from "./controllers/listOptionsController";
+import { getTypeNames } from "./apiRequests/getTypeNames";
+import "./style.css";
 
 const app = document.querySelector("#app");
 export const { getOptions, setOptions } = listOptionsController();

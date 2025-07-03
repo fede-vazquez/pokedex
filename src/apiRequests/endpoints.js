@@ -1,6 +1,9 @@
+// Documentación para ver respuesta de la api: https://pokeapi.co/docs/v2
+
 const API_URL = "https://pokeapi.co/api/v2";
 const POKEMONS = API_URL + "/pokemon";
 const GENERATIONS = API_URL + "/generation";
+const TYPES = API_URL + "/type";
 
 /**
  * Objeto que contiene diferentes métodos para usar endpoints de forma mas simple evitando magic strings.
@@ -9,6 +12,7 @@ const GENERATIONS = API_URL + "/generation";
  * @property {function} pokemonsByGeneration - Función para obtener endpoint personalizado.
  * @property {function} pokemonSpecieByID - Función para obtener endpoint personalizado.
  * @property {string} GENERATIONS - Endpoint para obtener todas las generaciones.
+ * @property {string} TYPES - Endpoint para obtener todos los tipos.
  */
 
 export const endpoints = Object.freeze({
@@ -44,4 +48,5 @@ export const endpoints = Object.freeze({
         API_URL + "/evolution-chain/" + evolutionChainID,
 
     GENERATIONS,
+    TYPES,
 });

@@ -1,4 +1,4 @@
-import { getIDFromURL } from "../utils/getIDFromUrl";
+import { getIDFromURL } from "../utils/getIDFromURL";
 import { endpoints } from "./endpoints";
 
 /**

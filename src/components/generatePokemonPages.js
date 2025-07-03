@@ -1,8 +1,8 @@
 import { paginateArray } from "../utils/paginateArray";
 import { generatePokemonList } from "./generatePokemonList";
 import { generatePokemonPagesControllers } from "./generatePokemonPagesControllers";
-import "../styles/pokemon-pages.css";
 import { getOptions, setOptions } from "../main";
+import "../styles/pokemon-pages.css";
 /**
  * Función que genera un section con pokemones paginados.
  * @param {Array<Pokemon>} pokemons - Lista total de pokemones para paginar.
