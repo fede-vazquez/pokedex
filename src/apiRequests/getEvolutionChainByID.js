@@ -9,10 +9,18 @@ import { getAllPokemonInfo } from "./getAllPokemonsInfo";
  */
 export async function getEvolutionChainByID(id) {
     const speciesReq = await fetch(endpoints.pokemonSpecieByID(id));
+    if (!speciesReq.ok)
+        throw new Error(`No se encontró la especie del pokémon con id ${id}.`);
+
     const { evolution_chain } = await speciesReq.json();
     const evolutionChainID = Number(getIDFromURL(evolution_chain.url));
 
     const evoReq = await fetch(endpoints.evolutionChainByID(evolutionChainID));
+    if (!evoReq.ok)
+        throw new Error(
+            `No se encontró la cadena evolutiva con id ${evolutionChainID}.`
+        );
+
     const { chain: evolutionChain } = await evoReq.json();
 
     const pokemonIDsFromEvolutionChain = [];

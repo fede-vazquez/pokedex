@@ -1,12 +1,20 @@
 import { getPokemonInfoByID } from "./apiRequests/getPokemonInfoByID";
+import { errorPage } from "./pages/errorPage";
 import { pokemonDetails } from "./pages/pokemonDetails";
 import "./style.css";
-import "./styles/details.css";
 
 const id = new URL(String(location)).searchParams.get("id");
-
-const pokemon = await getPokemonInfoByID(Number(id));
-
 const app = document.querySelector("#app");
 
-app.appendChild(pokemonDetails(pokemon));
+try {
+    const pokemon = await getPokemonInfoByID(Number(id));
+    app.appendChild(pokemonDetails(pokemon));
+} catch (err) {
+    console.log(err);
+
+    app.appendChild(
+        errorPage({
+            errorMessage: err.message,
+        })
+    );
+}

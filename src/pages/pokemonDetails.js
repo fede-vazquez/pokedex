@@ -1,5 +1,6 @@
 import { generatePokemonList } from "../components/generatePokemonList";
 import { generatePokemonTypesList } from "../components/generatePokemonTypesList";
+import "../styles/details.css";
 
 /**
  * Función que genera un elemento HTML con la información de un pokemon.

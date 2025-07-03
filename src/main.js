@@ -6,27 +6,39 @@ import { generateFilterAndSortPanel } from "./components/generateFilterAndSortPa
 import { pokemonListReducer } from "./controllers/pokemonListReducer";
 import { listOptionsController } from "./controllers/listOptionsController";
 import { getTypeNames } from "./apiRequests/getTypeNames";
+import { errorPage } from "./pages/errorPage";
 import "./style.css";
 
 const app = document.querySelector("#app");
 export const { getOptions, setOptions } = listOptionsController();
 
-// Lista para navegar entre generaciones
-const generationIDs = await getGenerationIDs();
-const genList = generateGenerationList(generationIDs);
-app.appendChild(genList);
-
-// Panel controlador para filtrar y ordenar.
-const typesList = await getTypeNames();
-app.appendChild(generateFilterAndSortPanel(typesList));
+// List de pokemones
+let pokemons = [];
 
 // Contenedor principal de los pokemones
 const pokemonContainer = document.createElement("div");
-app.appendChild(pokemonContainer);
 
-const pokemonsIds = await getPokemonIDsByGeneration(getOptions().genNumber);
-const pokemons = await getAllPokemonInfo(pokemonsIds);
+try {
+    // Lista para navegar entre generaciones
+    const generationIDs = await getGenerationIDs();
+    const genList = generateGenerationList(generationIDs);
 
+    // Panel controlador para filtrar y ordenar.
+    const typesList = await getTypeNames();
+
+    const pokemonsIds = await getPokemonIDsByGeneration(getOptions().genNumber);
+    pokemons = await getAllPokemonInfo(pokemonsIds);
+
+    app.appendChild(genList);
+    app.appendChild(generateFilterAndSortPanel(typesList));
+    app.appendChild(pokemonContainer);
+} catch (error) {
+    app.appendChild(
+        errorPage({
+            errorMessage: error.message,
+        })
+    );
+}
 export const renderPokemons = pokemonListReducer(pokemons, pokemonContainer);
 
 renderPokemons(getOptions());

@@ -8,9 +8,12 @@ import { getEvolutionChainByID } from "./getEvolutionChainByID";
  */
 export async function getPokemonInfoByID(searchId) {
     const req = await fetch(endpoints.pokemonById(searchId));
-    if (!req.ok) throw new Error("No se encontró la información del pokemon.");
-    const res = await req.json();
+    if (!req.ok) {
+        console.log(req);
+        throw new Error(`No se encontró el pokémon con id ${searchId}.`);
+    }
 
+    const res = await req.json();
     const {
         id,
         id: pokedexNumber,
