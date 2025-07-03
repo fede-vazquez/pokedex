@@ -1,5 +1,5 @@
 import { getPokemonInfoByID } from "./apiRequests/getPokemonInfoByID";
-import { generatePokemonDetails } from "./components/generatePokemonDetails";
+import { pokemonDetails } from "./pages/pokemonDetails";
 import "./style.css";
 import "./styles/details.css";
 
@@ -9,6 +9,4 @@ const pokemon = await getPokemonInfoByID(Number(id));
 
 const app = document.querySelector("#app");
 
-const detailContainer = generatePokemonDetails(pokemon);
-
-app.appendChild(detailContainer);
+app.appendChild(pokemonDetails(pokemon));

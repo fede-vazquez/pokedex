@@ -1,13 +1,12 @@
-import { endpoints } from "../apiRequests/endpoints";
-import { generatePokemonList } from "./generatePokemonList";
-import { generatePokemonTypesList } from "./generatePokemonTypesList";
+import { generatePokemonList } from "../components/generatePokemonList";
+import { generatePokemonTypesList } from "../components/generatePokemonTypesList";
 
 /**
  * Función que genera un elemento HTML con la información de un pokemon.
  * @param {DetailedPokemon} pokemon - Información del pokemon a mostrar.
  * @returns {HTMLElement} - Elemento contenedor de la información del pokemon.
  */
-export const generatePokemonDetails = ({
+export const pokemonDetails = ({
     pokedexNumber,
     name,
     height,

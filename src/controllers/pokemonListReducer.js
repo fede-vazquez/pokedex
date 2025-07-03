@@ -60,6 +60,10 @@ export const pokemonListReducer = (pokemons, pokemonContainer) => {
         );
 
         pokemonContainer.innerHTML = "";
+        if (pokemonsCopy.length === 0) {
+            pokemonContainer.innerHTML = "<h1>No se encontraron pokemones</h1>";
+        }
+
         renderList(pokemonsCopy, pokemonContainer);
     };
 };
