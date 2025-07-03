@@ -27,3 +27,12 @@
  * @property {Array<EvolutionChain>} evolves_to - Array con las demás cadenas evolutivas.
  * @property {{name: String, url: string}} species - Datos sobre un pokemon específico.
  */
+
+/**
+ * @typedef {Object} ListOptions
+ * @property {Number} [genNumber] - Número de la generación.
+ * @property {String} [nameToFilter] - Nombre por el que se filtra.
+ * @property {Array<string>} [typesToFilter] - Array de tipos.
+ * @property {{type: "pokedexNumber" | "height" | "weight", isAsc: Boolean}} [sortByAttribute] - Atributo por el que se va a ordenar.
+ * @property {Number} [lastPage] - Ultima página vista.
+ */

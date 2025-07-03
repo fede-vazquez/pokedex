@@ -1,6 +1,6 @@
 import { generateGenerationBtn } from "./generateGenerationBtn";
 import "../styles/generation-list.css";
-import { handleChangeGen } from "../main";
+import { getOptions, renderPokemons, setOptions } from "../main";
 
 /**
  * Función que genera elemento ul con una lista de generaciones pokémon para su selección.
@@ -23,7 +23,7 @@ export const generateGenerationList = genIDs => {
 
         element.parentElement.classList.add("active-gen");
 
-        handleChangeGen(genNumber);
+        renderPokemons(setOptions({ genNumber }));
     };
 
     // Cargar cada botón para cambiar la generación.

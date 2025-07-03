@@ -38,6 +38,6 @@ export async function getEvolutionChainByID(id) {
 
 /*
     evolutionChain.species.url
-    evolves_to[0].species.url
+    evolutionChain.evolves_to[0].species.url
     evolutionChain.evolves_to[0].evolves_to[0].species.url
 */

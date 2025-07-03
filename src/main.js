@@ -5,6 +5,8 @@ import { getPokemonIDsByGeneration } from "./apiRequests/getPokemonIDsByGenerati
 import { getAllPokemonInfo } from "./apiRequests/getAllPokemonsInfo";
 import "./style.css";
 import { generateFilterAndSortPanel } from "./components/generateFilterAndSortPanel";
+import { pokemonListReducer } from "./controllers/pokemonListReducer";
+import { listOptionsController } from "./controllers/listOptionsController";
 
 const app = document.querySelector("#app");
 
@@ -14,21 +16,26 @@ const genList = generateGenerationList(generationIDs);
 app.appendChild(genList);
 
 // Panel controlador para filtrar y ordenar.
-app.appendChild(generateFilterAndSortPanel());
+// app.appendChild(generateFilterAndSortPanel());
 
 // Contenedor principal de los pokemones
 const pokemonContainer = document.createElement("div");
-pokemonContainer.innerHTML = "Cargando";
 app.appendChild(pokemonContainer);
 
-const pokemonsIds = await getPokemonIDsByGeneration(1);
+export const { getOptions, setOptions } = listOptionsController();
+
+const pokemonsIds = await getPokemonIDsByGeneration(getOptions().genNumber);
 const pokemons = await getAllPokemonInfo(pokemonsIds);
 
-export const {
-    sortPokemonByAttribute,
-    filterPokemonByAttribute,
-    handleChangeGen,
-    renderList,
-} = pokemonListController(pokemons, pokemonContainer);
+export const renderPokemons = pokemonListReducer(pokemons, pokemonContainer);
 
-renderList();
+/**@type {ListOptions} */
+let defaultListOptions = {
+    genNumber: 1,
+    nameToFilter: "",
+    typesToFilter: [],
+    sortByAttribute: { type: "pokedexNumber", isAsc: true },
+    lastPage: 1,
+};
+
+renderPokemons(getOptions() || defaultListOptions);
