@@ -17,7 +17,8 @@ const genList = generateGenerationList(generationIDs);
 app.appendChild(genList);
 
 // Panel controlador para filtrar y ordenar.
-app.appendChild(generateFilterAndSortPanel());
+const typesList = await getTypeNames();
+app.appendChild(generateFilterAndSortPanel(typesList));
 
 // Contenedor principal de los pokemones
 const pokemonContainer = document.createElement("div");
