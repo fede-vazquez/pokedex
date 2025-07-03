@@ -32,7 +32,6 @@ export const generatePokemonPages = pokemons => {
 
             pagesContainer.appendChild(newList);
             setOptions({ lastPage: pageNumber });
-            lastPage = pageNumber;
         }
     };
 
