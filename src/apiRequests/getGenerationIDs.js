@@ -1,3 +1,4 @@
+import { getIDFromURL } from "../utils/getIDFromUrl";
 import { endpoints } from "./endpoints";
 
 /**
@@ -14,8 +15,7 @@ export async function getGenerationIDs() {
 
     const data = res.results;
 
-    // Extraigo el id de la url para luego usarla con endpoints.getPokemonIDsByGeneration.
-    const ids = data.map(p => Number(p.url.split("/").reverse()[1]));
+    const ids = data.map(p => getIDFromURL(p.url));
 
     return ids;
 }

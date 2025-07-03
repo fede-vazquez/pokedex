@@ -11,15 +11,15 @@ ul {
 :root {
     font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
     --color: #222;
-    --backgrount-color: #f2f2f2;
+    --background-color: #f2f2f2;
 }
 
 body {
-    background-color: var(--backgrount-color);
+    background-color: var(--background-color);
     color: var(--color);
 }
 
 .dark-mode {
     --color: #f0f0f0;
-    --backgrount-color: #242424;
+    --background-color: #242424;
 }

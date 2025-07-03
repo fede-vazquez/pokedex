@@ -1,3 +1,4 @@
+import { getIDFromURL } from "../utils/getIDFromUrl";
 import { endpoints } from "./endpoints";
 
 /**
@@ -8,13 +9,17 @@ import { endpoints } from "./endpoints";
 
 export async function getPokemonIDsByGeneration(generationNumber) {
     const req = await fetch(endpoints.pokemonsByGeneration(generationNumber));
-    if (!req.ok) return [];
+    if (!req.ok)
+        throw new Error(
+            "No se pudo obtener la información de las generaciones."
+        );
+
     const res = await req.json();
 
     const data = res.pokemon_species;
 
     // Extraigo el id de la url para luego usarla con getPokemonGeneralInfoById.
-    const ids = data.map(p => Number(p.url.split("/").reverse()[1]));
+    const ids = data.map(p => getIDFromURL(p.url));
 
     return ids;
 }

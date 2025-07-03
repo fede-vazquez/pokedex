@@ -7,6 +7,7 @@ const GENERATIONS = API_URL + "/generation";
  * @property {string} POKEMONS - Endpoint para obtener todos los pokemones.
  * @property {function} pokemonById - Función para obtener endpoint personalizado.
  * @property {function} pokemonsByGeneration - Función para obtener endpoint personalizado.
+ * @property {function} pokemonSpecieByID - Función para obtener endpoint personalizado.
  * @property {string} GENERATIONS - Endpoint para obtener todas las generaciones.
  */
 
@@ -26,18 +27,21 @@ export const endpoints = Object.freeze({
      * @returns {String} - Endpoint personalizado para hacer la petición a la API
      */
     pokemonsByGeneration: generationNumber =>
-        API_URL + "/generation/" + generationNumber,
+        GENERATIONS + "/" + generationNumber,
 
     /**
-     * Función que devuelve un objeto con las URLs de los art-works originales.
-     * @param {Number} id - Número del pokémon.
-     * @returns {{normal: String, shiny: String}} - URLs de los art-works originales.
+     * Función que recibe un ID de pokemon y devuelve un endpoint personalizado
+     * @param {Number} pokemonID - ID del pokémon.
+     * @returns {String} - Endpoint personalizado para la petición de la API
      */
-    oficialArtWorkURLsByPokemonId: id => {
-        return {
-            normal: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`,
-            shiny: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/${id}.png`,
-        };
-    },
+    pokemonSpecieByID: pokemonID => API_URL + "/pokemon-species/" + pokemonID,
+
+    /**
+     * Función que recibe un ID de una cadena evolutiva y devuelve un endpoint personalizado
+     * @param {Number} evolutionChainID - ID de la cadena evolutiva.
+     */
+    evolutionChainByID: evolutionChainID =>
+        API_URL + "/evolution-chain/" + evolutionChainID,
+
     GENERATIONS,
 });
