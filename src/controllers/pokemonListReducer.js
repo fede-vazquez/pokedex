@@ -1,3 +1,4 @@
+import { getOptions } from "../main.js";
 import { pokemonListController } from "./pokemonListController.js";
 
 /**
@@ -14,7 +15,7 @@ export const pokemonListReducer = (pokemons, pokemonContainer) => {
     } = pokemonListController();
 
     // Bandera para evitar peticiones repetidas a la API.
-    let lastGen = -1;
+    let lastGen = getOptions().genNumber || 1;
 
     /**
      * Función que permite usar las acciones del reducer.
