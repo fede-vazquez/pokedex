@@ -1,8 +1,8 @@
-import { getPokemonInfoByID } from "./apiRequests/getPokemonInfoByID";
-import { generateFooter } from "./components/generateFooter";
-import { generateHeader } from "./components/generateHeader";
-import { errorPage } from "./pages/errorPage";
-import { pokemonDetails } from "./pages/pokemonDetails";
+import { getPokemonInfoByID } from "./apiRequests/getPokemonInfoByID.js";
+import { generateFooter } from "./components/generateFooter.js";
+import { generateHeader } from "./components/generateHeader.js";
+import { errorPage } from "./pages/errorPage.js";
+import { pokemonDetails } from "./pages/pokemonDetails.js";
 import "./style.css";
 
 const id = new URL(String(location)).searchParams.get("id");

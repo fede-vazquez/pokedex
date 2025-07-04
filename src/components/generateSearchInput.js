@@ -1,4 +1,4 @@
-import { getOptions, renderPokemons, setOptions } from "../main";
+import { getOptions, renderPokemons, setOptions } from "../main.js";
 
 /**
  * Función que genera un input de búsqueda para filtrar los Pokémon por nombre.

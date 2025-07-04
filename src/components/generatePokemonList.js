@@ -1,6 +1,5 @@
+import { generatePokemonCard } from "./generatePokemonCard.js";
 import "../styles/pokemon-card-list.css";
-
-import { generatePokemonCard } from "./generatePokemonCard";
 
 /**
  * Función que genera una lista de cards de pokemones dada una lista de pokemones.

@@ -1,5 +1,5 @@
-import { getOptions, renderPokemons, setOptions } from "../main";
-import { generateSelectedTypesList } from "./generateSelectedTypesList";
+import { getOptions, renderPokemons, setOptions } from "../main.js";
+import { generateSelectedTypesList } from "./generateSelectedTypesList.js";
 
 export const generateTypesToFilterList = types => {
     // Lee los últimos tipos desde el sessionStorage

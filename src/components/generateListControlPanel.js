@@ -1,7 +1,7 @@
-import { generateTypesToFilterList } from "./generateTypesToFilterList";
-import { generateSearchInput } from "./generateSearchInput";
-import { generateSelectToOrderList } from "./generateSelectToOrderList";
-import { generateGenerationSelect } from "./generateGenerationList";
+import { generateTypesToFilterList } from "./generateTypesToFilterList.js";
+import { generateSearchInput } from "./generateSearchInput.js";
+import { generateSelectToOrderList } from "./generateSelectToOrderList.js";
+import { generateGenerationSelect } from "./generateGenerationList.js";
 import "../styles/filter-and-sort-panel.css";
 
 /**

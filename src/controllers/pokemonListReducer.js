@@ -1,4 +1,4 @@
-import { pokemonListController } from "./pokemonListController";
+import { pokemonListController } from "./pokemonListController.js";
 
 /**
  * Función que retorna métodos para controlar el contenido de la lista de pokemones.

@@ -1,5 +1,5 @@
-import { generatePokemonList } from "../components/generatePokemonList";
-import { generatePokemonTypesList } from "../components/generatePokemonTypesList";
+import { generatePokemonList } from "../components/generatePokemonList.js";
+import { generatePokemonTypesList } from "../components/generatePokemonTypesList.js";
 import "../styles/details.css";
 
 /**

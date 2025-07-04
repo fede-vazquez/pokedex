@@ -1,7 +1,7 @@
-import { paginateArray } from "../utils/paginateArray";
-import { generatePokemonList } from "./generatePokemonList";
-import { generatePokemonPagesControllers } from "./generatePokemonPagesControllers";
-import { getOptions, setOptions } from "../main";
+import { paginateArray } from "../utils/paginateArray.js";
+import { generatePokemonList } from "./generatePokemonList.js";
+import { generatePokemonPagesControllers } from "./generatePokemonPagesControllers.js";
+import { getOptions, setOptions } from "../main.js";
 import "../styles/pokemon-pages.css";
 /**
  * Función que genera un section con pokemones paginados.

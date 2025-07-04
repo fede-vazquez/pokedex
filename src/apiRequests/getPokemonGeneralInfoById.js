@@ -1,4 +1,4 @@
-import { endpoints } from "./endpoints";
+import { endpoints } from "./endpoints.js";
 
 /**
  * Función que solicita la información general de un pokémon por su id.

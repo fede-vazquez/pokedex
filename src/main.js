@@ -1,13 +1,13 @@
-import { getGenerationIDs } from "./apiRequests/getGenerationIDs";
-import { getPokemonIDsByGeneration } from "./apiRequests/getPokemonIDsByGeneration";
-import { getAllPokemonInfo } from "./apiRequests/getAllPokemonsInfo";
-import { generateListControlPanel } from "./components/generateListControlPanel";
-import { pokemonListReducer } from "./controllers/pokemonListReducer";
-import { listOptionsController } from "./controllers/listOptionsController";
-import { getTypeNames } from "./apiRequests/getTypeNames";
-import { errorPage } from "./pages/errorPage";
-import { generateHeader } from "./components/generateHeader";
-import { generateFooter } from "./components/generateFooter";
+import { getGenerationIDs } from "./apiRequests/getGenerationIDs.js";
+import { getPokemonIDsByGeneration } from "./apiRequests/getPokemonIDsByGeneration.js";
+import { getAllPokemonInfo } from "./apiRequests/getAllPokemonsInfo.js";
+import { generateListControlPanel } from "./components/generateListControlPanel.js";
+import { pokemonListReducer } from "./controllers/pokemonListReducer.js";
+import { listOptionsController } from "./controllers/listOptionsController.js";
+import { getTypeNames } from "./apiRequests/getTypeNames.js";
+import { errorPage } from "./pages/errorPage.js";
+import { generateHeader } from "./components/generateHeader.js";
+import { generateFooter } from "./components/generateFooter.js";
 import "./style.css";
 
 const app = document.querySelector("#app");

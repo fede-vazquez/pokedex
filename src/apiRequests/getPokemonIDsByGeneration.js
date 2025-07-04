@@ -1,5 +1,5 @@
-import { getIDFromURL } from "../utils/getIDFromURL";
-import { endpoints } from "./endpoints";
+import { getIDFromURL } from "../utils/getIDFromURL.js";
+import { endpoints } from "./endpoints.js";
 
 /**
  * Función que solicita los ids de los pokemones de una generación.

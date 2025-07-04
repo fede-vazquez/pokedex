@@ -1,4 +1,4 @@
-import { getOptions, renderPokemons, setOptions } from "../main";
+import { getOptions, renderPokemons, setOptions } from "../main.js";
 
 const options = {
     pokedexNumber: "Número de la pokedex",

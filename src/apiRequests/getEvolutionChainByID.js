@@ -1,6 +1,6 @@
-import { getIDFromURL } from "../utils/getIDFromURL";
-import { endpoints } from "./endpoints";
-import { getAllPokemonInfo } from "./getAllPokemonsInfo";
+import { getIDFromURL } from "../utils/getIDFromURL.js";
+import { endpoints } from "./endpoints.js";
+import { getAllPokemonInfo } from "./getAllPokemonsInfo.js";
 
 /**
  * Función que devuelve los pokemones de la cadena evolutiva de un pokemon específico.

@@ -1,5 +1,5 @@
-import { endpoints } from "./endpoints";
-import { getEvolutionChainByID } from "./getEvolutionChainByID";
+import { endpoints } from "./endpoints.js";
+import { getEvolutionChainByID } from "./getEvolutionChainByID.js";
 
 /**
  * Función que solicita la información general de un pokémon por su id.

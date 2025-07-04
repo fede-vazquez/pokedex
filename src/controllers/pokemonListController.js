@@ -1,6 +1,6 @@
-import { getAllPokemonInfo } from "../apiRequests/getAllPokemonsInfo";
-import { getPokemonIDsByGeneration } from "../apiRequests/getPokemonIDsByGeneration";
-import { generatePokemonPages } from "../components/generatePokemonPages";
+import { getAllPokemonInfo } from "../apiRequests/getAllPokemonsInfo.js";
+import { getPokemonIDsByGeneration } from "../apiRequests/getPokemonIDsByGeneration.js";
+import { generatePokemonPages } from "../components/generatePokemonPages.js";
 
 /**
  * Función que retorna métodos para controlar el contenido de la lista de pokemones.

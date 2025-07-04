@@ -1,4 +1,4 @@
-import { generatePokemonTypesList } from "./generatePokemonTypesList";
+import { generatePokemonTypesList } from "./generatePokemonTypesList.js";
 
 /**
  * Función que genera una card de un pokémon dependiendo de la información dada.

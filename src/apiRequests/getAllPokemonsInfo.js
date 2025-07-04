@@ -1,4 +1,4 @@
-import { getPokemonGeneralInfoByID } from "./getPokemonGeneralInfoByID";
+import { getPokemonGeneralInfoByID } from "./getPokemonGeneralInfoByID.js";
 
 /**
  * Función para solicitar la información de pokemones según un array de ids dado.

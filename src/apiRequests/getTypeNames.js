@@ -1,4 +1,4 @@
-import { endpoints } from "./endpoints";
+import { endpoints } from "./endpoints.js";
 
 /**
  * Función que trae los tipos de los pokemones según la API.

@@ -1,4 +1,4 @@
-import { getOptions, renderPokemons, setOptions } from "../main";
+import { getOptions, renderPokemons, setOptions } from "../main.js";
 
 export const generateGenerationSelect = genIDs => {
     const container = document.createElement("div");
