@@ -1,0 +1,9 @@
+{
+    "rewrites": [
+        { "source": "/", "destination": "/index.html" },
+        { "source": "/details", "destination": "/details.html" }
+    ],
+    "buildCommand": "npm run build",
+    "outputDirectory": "dist",
+    "framework": "vite"
+}
