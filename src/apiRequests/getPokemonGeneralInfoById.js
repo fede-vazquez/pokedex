@@ -22,12 +22,14 @@ export async function getPokemonGeneralInfoByID(searchId) {
     } = res;
 
     const typeNames = types.map(({ type }) => type.name);
+    // height se pasa de decímetros a centímetros (1 decímetro = 10 centímetros)
+    // weight se pasa de hectograms a kilogramos (1 hectogramo = 0.1 kilogramos)
     return {
         id,
         pokedexNumber,
         name,
-        height,
-        weight,
+        height: height * 10,
+        weight: weight / 10,
         sprites: { normal, shiny },
         typeNames,
     };

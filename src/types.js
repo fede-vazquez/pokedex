@@ -3,8 +3,8 @@
  * @property {Number} id - ID interno del Pokémon.
  * @property {Number} pokedexNumber - Número en la Pokedex.
  * @property {String} name - Nombre del Pokémon.
- * @property {Number} height - Altura del Pokémon.
- * @property {Number} weight - Peso del Pokémon.
+ * @property {Number} height - Altura del Pokémon en centímetros.
+ * @property {Number} weight - Peso del Pokémon en kilogramos.
  * @property {{ normal: String, shiny: String }} sprites - Sprites, normal y shiny.
  * @property {Array<String>} typeNames - Tipos del Pokémon (por ejemplo: ["grass", "poison"]).
  */
@@ -14,11 +14,11 @@
  * @property {Number} id - ID interno del Pokémon.
  * @property {Number} pokedexNumber - Número en la Pokedex.
  * @property {String} name - Nombre del Pokémon.
- * @property {Number} height - Altura del Pokémon.
- * @property {Number} weight - Peso del Pokémon.
+ * @property {Number} height - Altura del Pokémon en centímetros.
+ * @property {Number} weight - Peso del Pokémon en kilogramos.
  * @property {{ normal: String, shiny: String }} artWorks - Imágenes, normal y shiny.
  * @property {Array<String>} typeNames - Tipos del Pokémon (por ejemplo: ["grass", "poison"]).
- * @property {Array<{name: String}>} baseStats
+ * @property {Array<{name: String, base: Number}>} baseStats
  * @property {Array<Pokemon>} evolutionChain - Cadena evolutiva del pokemon.
  */
 

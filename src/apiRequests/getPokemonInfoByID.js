@@ -39,12 +39,14 @@ export async function getPokemonInfoByID(searchId) {
 
     const evolutionChain = await getEvolutionChainByID(id);
 
+    // height se pasa de decímetros a centímetros (1 decímetro = 10 centímetros)
+    // weight se pasa de hectograms a kilogramos (1 hectogramo = 0.1 kilogramos)
     return {
         id,
         pokedexNumber,
         name,
-        height,
-        weight,
+        height: height * 10,
+        weight: height / 10,
         artWorks: { normal, shiny },
         typeNames,
         baseStats,

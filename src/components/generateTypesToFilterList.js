@@ -43,8 +43,6 @@ export const generateTypesToFilterList = types => {
      * @param {*} event - Evento del botón de eliminar tipo
      */
     const handleClick = event => {
-        console.log(event.target.innerText);
-
         // Elimina el tipo del filtro
         const newTypes = getOptions().typesToFilter.filter(
             t => t !== event.target.innerText.toLowerCase()

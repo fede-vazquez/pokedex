@@ -22,8 +22,19 @@ a {
 
 .pokemon-card {
     width: 250px;
-    background-color: var(--type-bg-color);
+    background-color: var(--type-bg-secondary-color);
     border-radius: 20px;
+    overflow: hidden;
+    transition: all 500ms;
+    &&:hover {
+        box-shadow: 0 0 20px var(--type-bg-color);
+    }
+}
+
+.pokemon-card a {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .card-header {
@@ -31,15 +42,16 @@ a {
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    border-bottom: 1px solid #f0f0f0;
+    height: 100%;
 }
 
 .card-img {
     padding: 0 10px;
-    border-left: 1px solid #f0f0f0;
     width: 100;
     min-height: 100px;
     height: 100%;
+    background-color: var(--type-bg-color);
+    border-top-left-radius: 30px;
 }
 
 .card-info {

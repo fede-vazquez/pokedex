@@ -7,8 +7,6 @@ a {
 
 .pokemon-container {
     text-align: center;
-    display: flex;
-    flex-direction: column;
     width: 100%;
     max-width: 1200px;
     margin: auto;
@@ -18,6 +16,11 @@ a {
     position: relative;
     background-color: var(--type-bg-color);
     width: 100%;
+    margin-bottom: 20px;
+}
+
+.pokemon-img-container h1 {
+    background-color: var(--type-bg-secondary-color);
 }
 
 .pokemon-img-container img {
@@ -32,10 +35,22 @@ a {
     font-weight: bold;
     font-size: 2rem;
 
-    background-color: #44444455;
+    background-color: var(--type-bg-secondary-color);
     border-end-start-radius: 30px;
 }
 
 .evolution-chain .types-container {
     text-align: start;
+}
+
+.pokemon-stats {
+    width: fit-content;
+    margin: auto;
+    padding: 10px;
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
 }

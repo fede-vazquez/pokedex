@@ -25,16 +25,36 @@ export const pokemonDetails = ({
                 <span class="pokedex-number">N° ${pokedexNumber}</span>
                 <img src="${artWorks.normal}"
                     alt="imagen de ${name}">
+                <h1>${name.replace(name[0], name[0].toUpperCase())}</h1>
             </div>
 
             <div class="more-details-pokemon">
-                <h1>${name.replace(name[0], name[0].toUpperCase())}</h1>
                 ${generatePokemonTypesList(typeNames).outerHTML}
+
+                <div class="pokemon-stats">
+                    <h3>Estadísticas base</h3>
+                    <ul>
+                        ${baseStats
+                            .map(
+                                stat =>
+                                    `<li class="stat-item"><span class="stat-name">${stat.name.replace(
+                                        "-",
+                                        " "
+                                    )}:</span> ${stat.base}</li>`
+                            )
+                            .join("")}
+                    </ul>
+                </div>
 
                 <div class="evolution-chain">
                     <h2>Cadena evolutiva</h2>
-                    ${generatePokemonList(evolutionChain).outerHTML}
+                    ${
+                        evolutionChain.length
+                            ? generatePokemonList(evolutionChain).outerHTML
+                            : "<p>Este pokemon no tiene cadena evolutiva.</p>"
+                    }
                 </div>
+
             </div>
         </div>`;
 

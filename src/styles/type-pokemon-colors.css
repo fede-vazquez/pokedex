@@ -1,5 +1,90 @@
 .type-poison {
     --type-bg-color: #9f79ee;
+    --type-bg-secondary-color: #7a5bb6;
+}
+.type-normal {
+    --type-bg-color: #a8a77a;
+    --type-bg-secondary-color: #7c7a4e;
+}
+.type-fighting {
+    --type-bg-color: #c22e28;
+    --type-bg-secondary-color: #8e2320;
+}
+.type-flying {
+    --type-bg-color: #a98ff3;
+    --type-bg-secondary-color: #7a6bb3;
+}
+.type-poison {
+    --type-bg-color: #a33ea1;
+    --type-bg-secondary-color: #7a2e7a;
+}
+.type-ground {
+    --type-bg-color: #e2bf65;
+    --type-bg-secondary-color: #b89c4c;
+}
+.type-rock {
+    --type-bg-color: #b6a136;
+    --type-bg-secondary-color: #8c7e28;
+}
+.type-bug {
+    --type-bg-color: #a6b91a;
+    --type-bg-secondary-color: #7d8a13;
+}
+.type-ghost {
+    --type-bg-color: #735797;
+    --type-bg-secondary-color: #55426d;
+}
+.type-steel {
+    --type-bg-color: #b7b7ce;
+    --type-bg-secondary-color: #8a8a9c;
+}
+.type-fire {
+    --type-bg-color: #ee8130;
+    --type-bg-secondary-color: #b35f1f;
+}
+.type-water {
+    --type-bg-color: #6390f0;
+    --type-bg-secondary-color: #4663a3;
+}
+.type-grass {
+    --type-bg-color: #7ac74c;
+    --type-bg-secondary-color: #578c36;
+}
+.type-electric {
+    --type-bg-color: #f7d02c;
+    --type-bg-secondary-color: #bfa11f;
+}
+.type-psychic {
+    --type-bg-color: #f95587;
+    --type-bg-secondary-color: #b03b5f;
+}
+.type-ice {
+    --type-bg-color: #96d9d6;
+    --type-bg-secondary-color: #6fa3a0;
+}
+.type-dragon {
+    --type-bg-color: #6f35fc;
+    --type-bg-secondary-color: #4c2592;
+}
+.type-dark {
+    --type-bg-color: #705746;
+    --type-bg-secondary-color: #4e3e32;
+}
+.type-fairy {
+    --type-bg-color: #d685ad;
+    --type-bg-secondary-color: #a05c7e;
+}
+.type-stellar {
+    --type-bg-color: #f8d030;
+    --type-bg-secondary-color: #bfa11f;
+}
+.type-shadow {
+    --type-bg-color: #6f35fc;
+    --type-bg-secondary-color: #4c2592;
+}
+/* 
+.type-poison {
+    --type-bg-color: #9f79ee;
 }
 .type-normal {
     --type-bg-color: #a8a77a;
@@ -61,3 +146,4 @@
 .type-shadow {
     --type-bg-color: #6f35fc;
 }
+ */

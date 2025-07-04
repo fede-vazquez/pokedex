@@ -6,12 +6,12 @@
     font-weight: bold;
     text-transform: capitalize;
     background-color: var(--type-bg-color);
-    box-shadow: 0 0 5px #00000033;
     cursor: pointer;
 }
 
 .types-container {
     padding: 0 5px;
+    width: 100%;
 }
 
 .card-types {
