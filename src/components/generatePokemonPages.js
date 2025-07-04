@@ -31,6 +31,13 @@ export const generatePokemonPages = pokemons => {
             const newList = generatePokemonList(pages.getPage(pageNumber));
 
             pagesContainer.appendChild(newList);
+            //Scroll para arriba
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+            });
+
+            // Actualizamos la última página
             setOptions({ lastPage: pageNumber });
         }
     };
