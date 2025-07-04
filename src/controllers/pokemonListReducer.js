@@ -1,3 +1,4 @@
+import { generateLoader } from "../components/generateLoader.js";
 import { getOptions } from "../main.js";
 import { pokemonListController } from "./pokemonListController.js";
 
@@ -27,7 +28,8 @@ export const pokemonListReducer = (pokemons, pokemonContainer) => {
         typesToFilter,
         sortByAttribute,
     }) {
-        pokemonContainer.innerHTML = "<h1>Cargando</h1>";
+        pokemonContainer.innerHTML = generateLoader().outerHTML;
+
         let pokemonsCopy = [...pokemons];
 
         // 1. Buscar pokemones por generación.
@@ -60,9 +62,9 @@ export const pokemonListReducer = (pokemons, pokemonContainer) => {
             sortByAttribute.isAsc
         );
 
-        pokemonContainer.innerHTML = "";
         if (pokemonsCopy.length === 0) {
-            pokemonContainer.innerHTML = "<h1>No se encontraron pokemones</h1>";
+            pokemonContainer.innerHTML = "<h2>No se encontraron pokemones</h2>";
+            return;
         }
 
         renderList(pokemonsCopy, pokemonContainer);

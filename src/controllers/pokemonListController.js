@@ -60,7 +60,7 @@ export const pokemonListController = () => {
         const ids = await getPokemonIDsByGeneration(genNumber);
         const pokemons = await getAllPokemonInfo(ids);
 
-        return pokemons.sort((a, b) => a.id - b.id);
+        return pokemons;
     }
 
     /**
@@ -69,6 +69,8 @@ export const pokemonListController = () => {
      * @param {HTMLElement} pokemonContainer - Contenedor donde se va a renderizar la lista.
      */
     function renderList(pokemons, pokemonContainer) {
+        // Limpia el contenedor de pokemones antes de renderizarlo otra vez.
+        pokemonContainer.innerHTML = "";
         pokemonContainer.appendChild(generatePokemonPages(pokemons));
     }
 

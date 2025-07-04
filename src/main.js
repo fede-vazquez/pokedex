@@ -8,6 +8,7 @@ import { getTypeNames } from "./apiRequests/getTypeNames.js";
 import { errorPage } from "./pages/errorPage.js";
 import { generateHeader } from "./components/generateHeader.js";
 import { generateFooter } from "./components/generateFooter.js";
+import { generateLoader } from "./components/generateLoader.js";
 import "./style.css";
 
 const app = document.querySelector("#app");
@@ -20,21 +21,25 @@ let pokemons = [];
 const pokemonContainer = document.createElement("div");
 
 try {
+    app.appendChild(generateHeader());
+
     // Lista para navegar entre generaciones
     const generationIDs = await getGenerationIDs();
 
     // Panel controlador para filtrar y ordenar.
     const typesList = await getTypeNames();
 
-    const pokemonsIds = await getPokemonIDsByGeneration(getOptions().genNumber);
-    pokemons = await getAllPokemonInfo(pokemonsIds);
-
-    app.appendChild(generateHeader());
     app.appendChild(generateListControlPanel(typesList, generationIDs));
+
+    // Le pone el loader al contenedor de pokemones.
+    pokemonContainer.innerHTML = generateLoader().outerHTML;
     app.appendChild(pokemonContainer);
     app.appendChild(generateFooter());
+
+    const pokemonsIds = await getPokemonIDsByGeneration(getOptions().genNumber);
+    pokemons = await getAllPokemonInfo(pokemonsIds);
 } catch (error) {
-    app.appendChild(
+    app.replaceWith(
         errorPage({
             errorMessage: error.message,
         })

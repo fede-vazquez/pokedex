@@ -14,9 +14,7 @@ try {
     app.appendChild(pokemonDetails(pokemon));
     app.appendChild(generateFooter());
 } catch (err) {
-    console.log(err);
-
-    app.appendChild(
+    app.replaceWith(
         errorPage({
             errorMessage: err.message,
         })

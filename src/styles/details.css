@@ -10,6 +10,7 @@ a {
     width: 100%;
     max-width: 1200px;
     margin: auto;
+    margin-bottom: 20px;
 }
 
 .pokemon-img-container {
@@ -17,10 +18,13 @@ a {
     background-color: var(--type-bg-color);
     width: 100%;
     margin-bottom: 20px;
+
+    min-height: 400px;
 }
 
 .pokemon-img-container h1 {
     background-color: var(--type-bg-secondary-color);
+    width: 100%;
 }
 
 .pokemon-img-container img {

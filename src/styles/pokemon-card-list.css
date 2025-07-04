@@ -49,6 +49,7 @@ a {
     padding: 0 10px;
     width: 100;
     min-height: 100px;
+    min-width: 100px;
     height: 100%;
     background-color: var(--type-bg-color);
     border-top-left-radius: 30px;
