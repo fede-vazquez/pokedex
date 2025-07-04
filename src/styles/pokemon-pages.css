@@ -4,9 +4,10 @@
     text-align: center;
     margin: auto;
     width: fit-content;
+    max-width: 90%;
     font-size: x-large;
     margin-top: 10px;
-    overflow: scroll;
+    overflow: auto;
 }
 
 .page-number-controller {
